@@ -31,11 +31,11 @@
         {
             if (string.IsNullOrEmpty(Artist))
             {
-                throw new Exception("Artist is required");
+                throw new ArgumentNullException("Artist is required");
             }
             if (Artist.Length < 2)
             {
-                throw new Exception("Artist must be at least 2 characters long");
+                throw new ArgumentOutOfRangeException("Artist must be at least 2 characters long");
             }
         }
 
@@ -43,11 +43,11 @@
         {
             if (DurationInSeconds == null)
             {
-                throw new Exception("Duration is required");
+                throw new ArgumentNullException("Duration is required");
             }
             if (DurationInSeconds < 0)
             {
-                throw new Exception("Duration must be a positive number");
+                throw new ArgumentOutOfRangeException("Duration must be a positive number");
             }
         }
 
@@ -55,11 +55,11 @@
         {
             if (publicationYear == null)
             {
-                throw new Exception("Publication year is required");
+                throw new ArgumentNullException("Publication year is required");
             }
             if (publicationYear < 1860)
             {
-                throw new Exception("Publication year must be higher than 1860");
+                throw new ArgumentOutOfRangeException("Publication year must be higher than 1860");
             }
         }
 
