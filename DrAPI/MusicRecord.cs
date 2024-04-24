@@ -4,14 +4,14 @@
     {
         public string? Title { get; set; }
         public string? Artist { get; set; }
-        public int? Duration { get; set; }
+        public int? DurationInSeconds { get; set; }
         public int? publicationYear { get; set; }
 
 
 
         public override string ToString()
         {
-            return $"{Title} by {Artist} ({publicationYear}) {Duration}";
+            return $"{Title} by {Artist} ({publicationYear}) {DurationInSeconds}";
         }
 
 
@@ -41,11 +41,11 @@
 
         public void ValidateDuration()
         {
-            if (Duration == null)
+            if (DurationInSeconds == null)
             {
                 throw new Exception("Duration is required");
             }
-            if (Duration < 0)
+            if (DurationInSeconds < 0)
             {
                 throw new Exception("Duration must be a positive number");
             }
