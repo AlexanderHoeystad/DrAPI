@@ -8,9 +8,16 @@ namespace DrAPI.Controllers
     [ApiController]
     public class MusicRecordsController : ControllerBase
     {
+        private MusicRecordsRepository _musicRecordsRepository;
+        public MusicRecordsController(MusicRecordsRepository musicRecordsRepository)
+        {
+            _musicRecordsRepository = musicRecordsRepository;
+        }
+
+
         // GET: api/<MusicRecordsController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<MusicRecordsRepository> Get()
         {
             return new string[] { "value1", "value2" };
         }
