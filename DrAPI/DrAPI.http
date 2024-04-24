@@ -1,0 +1,6 @@
+@DrAPI_HostAddress = http://localhost:5017
+
+GET {{DrAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
