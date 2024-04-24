@@ -11,7 +11,7 @@
 
         public override string ToString()
         {
-            return $"{Title} by {Artist} ({publicationYear}) {DurationInSeconds}";
+            return $"{Title} by {Artist} ({publicationYear}) Duration In Seconds: {DurationInSeconds}";
         }
 
 
@@ -19,11 +19,11 @@
         {
             if (string.IsNullOrEmpty(Title))
             {
-                throw new Exception("Title is required");
+                throw new ArgumentNullException("Title is required");
             }
             if (Title.Length < 2)
             {
-                throw new Exception("Title must be at least 2 characters long");
+                throw new ArgumentOutOfRangeException("Title must be at least 2 characters long");
             }
         }
 
