@@ -19,6 +19,7 @@
             new MusicRecord { Title = "Hysteria", Artist = "Def Leppard", DurationInSeconds = 3870, publicationYear = 1987 },
             new MusicRecord { Title = "Born in the U.S.A.", Artist = "Bruce Springsteen", DurationInSeconds = 2740, publicationYear = 1984 },
             new MusicRecord { Title = "Brothers in Arms", Artist = "Dire Straits", DurationInSeconds = 3940, publicationYear = 1985 },
+            new MusicRecord { Title = "Bad", Artist = "Michael Jackson", DurationInSeconds = 4080, publicationYear = 1987 },
         };
 
         public List<MusicRecord> GetAll()
