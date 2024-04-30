@@ -5,13 +5,13 @@
         public string? Title { get; set; }
         public string? Artist { get; set; }
         public int? DurationInSeconds { get; set; }
-        public int? publicationYear { get; set; }
+        public int? PublicationYear { get; set; }
 
 
 
         public override string ToString()
         {
-            return $"{Title} by {Artist} ({publicationYear}) Duration In Seconds: {DurationInSeconds}";
+            return $"{Title} by {Artist} ({PublicationYear}) Duration In Seconds: {DurationInSeconds}";
         }
 
 
@@ -53,11 +53,11 @@
 
         public void ValidatePublicationYear()
         {
-            if (publicationYear == null)
+            if (PublicationYear == null)
             {
                 throw new ArgumentNullException("Publication year is required");
             }
-            if (publicationYear < 1860)
+            if (PublicationYear < 1860)
             {
                 throw new ArgumentOutOfRangeException("Publication year must be higher than 1860");
             }
