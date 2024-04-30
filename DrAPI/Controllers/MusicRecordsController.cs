@@ -18,7 +18,7 @@ namespace DrAPI.Controllers
         // GET: api/<MusicRecordsController>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
         public ActionResult<IEnumerable<MusicRecord>> Get()
         {
@@ -29,6 +29,8 @@ namespace DrAPI.Controllers
                 return NoContent();
             }
             return Ok(musicRecords);
+
+
             
             
         }
