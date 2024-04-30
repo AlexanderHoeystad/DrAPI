@@ -22,10 +22,42 @@
             new MusicRecord { Title = "Bad", Artist = "Michael Jackson", DurationInSeconds = 4080, PublicationYear = 1987 },
         };
 
-        public List<MusicRecord> GetAll()
+        public IEnumerable<MusicRecord> GetAll(string? title = null, string? artist = null, string? orderBy = null)
         {
-            return new List <MusicRecord>(_musicRecords);
+            IEnumerable<MusicRecord> result = new List<MusicRecord>(_musicRecords);
+            if (title != null)
+            {
+                result = result.Where(m => m.Title.Contains(title));
+            }
+            if (artist != null)
+            {
+                result = result.Where(m => m.Artist.Contains(artist));
+            }
+            if (orderBy != null)
+            {
+                switch (orderBy)
+                {
+                    case "title":
+                        result = result.OrderBy(m => m.Title);
+                        break;
+                    case "artist":
+                        result = result.OrderBy(m => m.Artist);
+                        break;
+                    case "duration":
+                        result = result.OrderBy(m => m.DurationInSeconds);
+                        break;
+                    case "publicationYear":
+                        result = result.OrderBy(m => m.PublicationYear);
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return result;
         }
+
+        
 
 
       
