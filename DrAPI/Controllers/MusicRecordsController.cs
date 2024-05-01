@@ -18,19 +18,17 @@ namespace DrAPI.Controllers
         // GET: api/<MusicRecordsController>
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
-        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [HttpGet]
-        public ActionResult<IEnumerable<MusicRecord>> Get()
+        public ActionResult<IEnumerable<MusicRecord>> Get([FromQuery] string? title = null, [FromQuery] string? artist = null, [FromQuery] string? orderBy = null)
         {
-            IEnumerable<MusicRecord> musicRecords = _musicRecordsRepository.GetAll();
+            IEnumerable<MusicRecord> musicRecords = _musicRecordsRepository.GetAll(title, artist, orderBy);
 
             if (musicRecords.Count() == 0)
             {
                 return NoContent();
             }
             return Ok(musicRecords);
-
-
             
             
         }
