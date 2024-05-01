@@ -27,6 +27,21 @@
             return new List <MusicRecord>(_musicRecords);
         }
 
+        //public MusicRecord GetByTitle(string title)
+        //{
+        //    return _musicRecords.FirstOrDefault(m => m.Title == title);
+        //}
+
+        public void Add(MusicRecord musicRecord)
+        {
+            musicRecord.ValidateTitle();
+            musicRecord.ValidateArtist();
+            musicRecord.ValidateDuration();
+            musicRecord.ValidatePublicationYear();
+
+            _musicRecords.Add(musicRecord);
+        }
+
 
       
 
