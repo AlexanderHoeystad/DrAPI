@@ -9,9 +9,9 @@ builder.Services.AddCors(option =>
     option.AddPolicy(name: "AllowAll",
               builder =>
               {
-                  builder.AllowAnyOrigin();
-                  builder.AllowAnyMethod();
-                  builder.AllowAnyHeader();
+                  builder.AllowAnyOrigin(); // WithOrigins("http://localhost:3000");
+                  builder.AllowAnyMethod(); // WithMethods("GET", "POST", "PUT", "DELETE");
+                  builder.AllowAnyHeader(); // WithHeaders("Accept", "Content-Type", "Origin", "X-My-Header");
               });
 });
 
